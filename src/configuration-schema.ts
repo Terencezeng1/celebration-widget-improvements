@@ -26,11 +26,11 @@ export const configurationSchema: JSONSchema7 = {
     },
     fieldfilter: {
       type: "string",
-      title: "Filter Profile Field ID"
+      title: "Filter Profile Field ID",
     },
     fieldvalue: {
       type: "string",
-      title: "Filter Profile Field Value"
+      title: "Filter Profile Field Value",
     },
     /*
     groupid: {
@@ -44,23 +44,23 @@ export const configurationSchema: JSONSchema7 = {
     },
     anniversaryprofilefieldid: {
       type: "string",
-      title: "Celebration Profile Field ID"
+      title: "Celebration Profile Field ID",
     },
     dateformat: {
       type: "string",
       enum: ["DD.MM", "MM.DD"],
       title: "Day/Month Order",
-      default: "MM.DD"
+      default: "MM.DD",
     },
     showdate: {
       type: "boolean",
       title: "Show Celebration Date?",
-      default: true
+      default: true,
     },
     hideemptywidget: {
       type: "boolean",
       title: "Hide widget if empty",
-      default: false
+      default: false,
     },
     /*
     imageurl: {
@@ -78,15 +78,15 @@ export const configurationSchema: JSONSchema7 = {
     },
     yearword: {
       type: "string",
-      title: "Year Word"
+      title: "Year Word",
     },
     yearwordplural: {
       type: "string",
-      title: "Year Word Plural"
+      title: "Year Word Plural",
     },
     includeyear: {
       type: "boolean",
-      title: "Split by Year"
+      title: "Split by Year",
     },
     /*
     todaytitle: {
@@ -97,7 +97,7 @@ export const configurationSchema: JSONSchema7 = {
     showdaysbefore: {
       type: "number",
       title: "Number of Days Before Celebrations",
-      default: 0
+      default: 0,
     },
     /*
     daysbeforetitle: {
@@ -108,7 +108,7 @@ export const configurationSchema: JSONSchema7 = {
     showdaysafter: {
       type: "number",
       title: "Number of Days After Celebrations",
-      default: 30
+      default: 30,
     },
     /*
     daysaftertitle: {
@@ -127,17 +127,17 @@ export const configurationSchema: JSONSchema7 = {
     hideyearheader: {
       type: "boolean",
       title: "Hide year header",
-      default: false
+      default: false,
     },
     optoutfield: {
       type: "string",
-      title: "Profile Field ID for Opt Out Field"
+      title: "Profile Field ID for Opt Out Field",
     },
     optoutvalue: {
       type: "string",
-      title: "Value for Opt Out Field"
+      title: "Value for Opt Out Field",
     },
-/*
+    /*
     showwholemonth: {
       type: "boolean",
       title: "Show Celebrations from the Whole Month?",
@@ -170,10 +170,10 @@ export const configurationSchema: JSONSchema7 = {
     includepending: {
       type: "boolean",
       title: "Include Pending Users",
-      default: false
-    }
+      default: false,
+    },
   },
-  required : ["anniversaryprofilefieldid", "dateformat"],
+  required: ["anniversaryprofilefieldid", "dateformat"],
   dependencies: {
     /*
     limit: {
@@ -194,20 +194,18 @@ export const configurationSchema: JSONSchema7 = {
         {
           properties: {
             includepending: {
-              enum: [ true ]
+              enum: [true],
             },
             networkid: {
               type: "string",
               title: "Network Plugin ID",
-            }
+            },
           },
-          required: [
-            "networkid"
-          ]
-        }
-      ]
+          required: ["networkid"],
+        },
+      ],
     },
-  }
+  },
 };
 
 /**
@@ -216,65 +214,79 @@ export const configurationSchema: JSONSchema7 = {
  */
 export const uiSchema: UiSchema = {
   anniversaryprofilefieldid: {
-    "ui:help": "Enter the profile field ID of the field that holds the date information",
+    "ui:help":
+      "Enter the profile field ID of the field that holds the date information",
   },
   groupid: {
-    "ui:help": "The group ID for the group of users who should be shown"
+    "ui:help": "The group ID for the group of users who should be shown",
   },
   dateformat: {
-    "ui:help": "Enter the order of day and month here"
+    "ui:help": "Enter the order of day and month here",
   },
   includepending: {
     "ui:help": "Check to include pending users",
-    "ui:hidden": true
+    "ui:hidden": true,
   },
   title: {
     "ui:help": "The title of the widget",
   },
   todaytitle: {
-    "ui:help": "The wording that will be shown above the users whose celebration is today",
+    "ui:help":
+      "The wording that will be shown above the users whose celebration is today",
   },
   loadingmessage: {
-    "ui:help": "The message that will be shown while the widget is still loading",
+    "ui:help":
+      "The message that will be shown while the widget is still loading",
   },
   noinstancesmessage: {
-    "ui:help": "Text that will be shown in the event that there are no applicable users",
+    "ui:help":
+      "Text that will be shown in the event that there are no applicable users",
   },
   yearword: {
-    "ui:help": "The word to use for the instance (Anniversary, Birthday, Year, etc)",
+    "ui:help":
+      "The word to use for the instance (Anniversary, Birthday, Year, etc)",
   },
   yearwordplural: {
-    "ui:help": "The word to use for the instance plural (Anniversaries, Birthdays, Years, etc)",
+    "ui:help":
+      "The word to use for the instance plural (Anniversaries, Birthdays, Years, etc)",
   },
   showdate: {
     "ui:help": "Select to show the user's date next to the user's name",
   },
   hideemptywidget: {
-    "ui:help": "If enabled and no applicable user is found, the widget will be hidden.",
+    "ui:help":
+      "If enabled and no applicable user is found, the widget will be hidden.",
   },
   showwholemonth: {
     "ui:help": "Select to show all celebrations for the current month",
   },
   showwholemonthforxdays: {
-    "ui:help": "Number of days that the month's worth of celebrations should be shown (starting at the beginning of the month)",
+    "ui:help":
+      "Number of days that the month's worth of celebrations should be shown (starting at the beginning of the month)",
   },
   showdaysbefore: {
-    "ui:help": "The number of previous days for which corresponding instances should be shown",
+    "ui:help":
+      "The number of previous days for which corresponding instances should be shown",
   },
   daysbeforetitle: {
-    "ui:help": "The message that appears at the top of previous celebrations section",
+    "ui:help":
+      "The message that appears at the top of previous celebrations section",
   },
   showdaysafter: {
-    "ui:help": "The number of upcoming days for which corresponding instances should be shown",
+    "ui:help":
+      "The number of upcoming days for which corresponding instances should be shown",
   },
   daysaftertitle: {
-    "ui:help": "The message that appears at the top of upcoming celebrations section",
+    "ui:help":
+      "The message that appears at the top of upcoming celebrations section",
   },
   specialyears: {
-    "ui:help": "If only certain years of celebrations should be shown, enter numbers separated by commas",
+    "ui:help":
+      "If only certain years of celebrations should be shown, enter numbers separated by commas",
   },
   hideyearheader: {
-    "ui:help": "Especially useful if you are showing only one special year and the title is redundant",
+    "ui:help":
+      "Especially useful if you are showing only one special year and the title is redundant",
   },
   fieldfilter: {
     "ui:help": "The profile field ID that will be used to filter users",
@@ -300,18 +312,21 @@ export const uiSchema: UiSchema = {
     "ui:help": "Hexcode color of the Header",
   },
   additionalfieldsdisplayed: {
-    "ui:help": "Profile Field IDs to show next to user's name separated by commas",
+    "ui:help":
+      "Profile Field IDs to show next to user's name separated by commas",
   },
   optoutgroupid: {
-    "ui:help": "Group ID of opt out group. Users in this group will not be shown in the widget",
+    "ui:help":
+      "Group ID of opt out group. Users in this group will not be shown in the widget",
   },
   includeyear: {
     "ui:help": "Split by year and show year of celebration",
   },
-  numbertoshow : {
-    "ui: help": "Enter the height of the widget (in pixels) Each profile is approximately 80 px. If left blank, all profiles will be shown."
+  numbertoshow: {
+    "ui: help":
+      "Enter the height of the widget (in pixels) Each profile is approximately 80 px. If left blank, all profiles will be shown.",
   },
   optoutfield: {
-    "ui:help": "Profile Field ID for Opt Out Field"
+    "ui:help": "Profile Field ID for Opt Out Field",
   },
 };
